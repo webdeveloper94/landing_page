@@ -6,18 +6,20 @@
     <title>Ilhom Begimkulov</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
-            <div class="logo">IB</div>
-            <ul class="nav-links">
-                <li><a href="#about">MEN HAQIMDA</a></li>
-                <li><a href="#consulting">BIZNES KONSULTATSIYA</a></li>
-                <li><a href="#training">TRENINGLAR</a></li>
-                <li><a href="#contact" class="contact-btn">BOʻYLANISH</a></li>
-            </ul>
+            <a href="#" class="logo">IB</a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link mobile-hide">MEN HAQIMDA</a>
+                <a href="#services" class="nav-link mobile-hide">BIZNES KONSULTATSIYA</a>
+                <a href="#training" class="nav-link mobile-hide">TRENINGLAR</a>
+                <a href="#blog" class="nav-link mobile-hide">BO'LANISH</a>
+                <a href="#contact" class="nav-button">BOG'LANISH</a>
+            </div>
         </div>
     </nav>
 
@@ -57,26 +59,7 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="consulting" class="services">
-        <div class="container">
-            <h2>Biznes Konsultatsiya</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Biznes Rivojlanishi</h3>
-                    <p>Biznesni rivojlantirish bo'yicha konsultatsiya</p>
-                </div>
-                <div class="service-card">
-                    <h3>Moliyaviy Konsultatsiya</h3>
-                    <p>Moliyaviy masalalar bo'yicha konsultatsiya</p>
-                </div>
-                <div class="service-card">
-                    <h3>Marketing Konsultatsiya</h3>
-                    <p>Marketing bo'yicha konsultatsiya</p>
-                </div>
-            </div>
-        </div>
-    </section>
+   
 
     
 
@@ -119,36 +102,289 @@
             </div>
         </div>
     </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+<!-- Training Section -->
+<section id="training" class="training">
+    <div class="container">
+        <div class="training-content">
+            <div class="training-info">
+                <h2>Treninglar</h2>
+                <ul class="features-list">
+                    <li>работает 24/7</li>
+                    <li>100% точность и корректность ответов</li>
+                    <li>при необходимости, подключают живого специалиста</li>
+                    <li>не берет больничный и никогда не уволится</li>
+                </ul>
+                <div class="training-cards">
+                    <div class="training-card">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M4 4h16v16H4V4z" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M8 12l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <p>Trening mavzulari yoziladi</p>
+                    </div>
+                    <div class="training-card">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M4 4h16v16H4V4z" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M7 12l3 3 7-7" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                        <p>Trening mavzulari yoziladi</p>
+                    </div>
+                    <div class="training-card">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 6v6l4 2M12 21a9 9 0 100-18 9 9 0 000 18z" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                        <p>Trening mavzulari yoziladi</p>
+                    </div>
+                    <div class="training-card">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 21a9 9 0 100-18 9 9 0 000 18z" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M12 8v8" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                        <p>Trening mavzulari yoziladi</p>
+                    </div>
+                </div>
+            </div>
+            <div class="training-image">
+                <img src="photo/2.png" alt="Training Image">
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <!-- Kitobim Section -->
+    <section id="kitobim" class="kitobim">
         <div class="container">
-            <h2>Bo'ylanish</h2>
-            <div class="contact-info">
-                <div class="contact-details">
-                    <h3>Aloqa Ma'lumotlari</h3>
-                    <p>Email: info@example.com</p>
-                    <p>Telefon: +1 234 567 890</p>
-                    <p>Manzil: 123 Business Street</p>
+            <h1 class="section-title">Kitobim</h1>
+            <div class="kitobim-content">
+                <div class="book-showcase">
+                    <img src="photo/book2.png" alt="Biznes Shpargalka" class="book back">
+                    <img src="photo/book1.png" alt="Biznes Shpargalka" class="book front">
+                </div>
+                <div class="book-info">
+                    <span class="subtitle">Xatolarimdan xulosalar</span>
+                    <h2>Biznes Shpargalka</h2>
+                    <div class="features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="12" fill="rgba(255, 255, 255, 0.1)"/>
+                                    <path d="M8 12l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Biznes tajribalarim</h3>
+                                <p>Biznesda uchragan qiyinchiliklarim va ulardan chiqish yo'llari</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="12" fill="rgba(255, 255, 255, 0.1)"/>
+                                    <path d="M8 12l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Xatolardan xulosalar</h3>
+                                <p>Biznesda yo'l qo'ygan xatolarim va ulardan olgan saboqlarim</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="12" fill="rgba(255, 255, 255, 0.1)"/>
+                                    <path d="M8 12l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Muvaffaqiyat siri</h3>
+                                <p>Biznesda muvaffaqiyatga erishish uchun muhim ko'rsatmalar</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="12" fill="rgba(255, 255, 255, 0.1)"/>
+                                    <path d="M8 12l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Amaliy maslahatlar</h3>
+                                <p>Biznesni rivojlantirish uchun foydali tavsiyalar</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Foydali Section -->
+    <section id="foydali" class="foydali">
+        <div class="container">
+            <h1 class="section-title">Foydali</h1>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-number">01</div>
+                    <div class="video-content">
+                        <h3>Savdoni oshirish</h3>
+                        <p>Mahsulotga to'g'ri narx qo'yish va sotish qanday bo'ladi?</p>
+                    </div>
+                    <div class="video-preview">
+                        <img src="photo/video-preview1.jpg" alt="Training video preview">
+                        <div class="video-overlay">
+                            <span class="video-tag">Trening haqida</span>
+                            <button class="play-button">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="12" fill="rgba(255, 255, 255, 0.2)"/>
+                                    <path d="M16 12l-6 4V8l6 4z" fill="currentColor"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-number">01</div>
+                    <div class="video-content">
+                        <h3>Savdoni oshirish</h3>
+                        <p>Mahsulotga to'g'ri narx qo'yish va sotish qanday bo'ladi?</p>
+                    </div>
+                    <div class="video-preview">
+                        <img src="photo/video-preview2.jpg" alt="Training video preview">
+                        <div class="video-overlay">
+                            <div class="video-title">
+                                <span class="highlight">BIZNESDA</span><br>
+                                <span class="highlight">SHERIK TANLASHDA</span><br>
+                                <span class="muted">ADASHMANG!</span>
+                            </div>
+                            <span class="video-tag">Trening haqida</span>
+                            <button class="play-button">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="12" fill="rgba(255, 255, 255, 0.2)"/>
+                                    <path d="M16 12l-6 4V8l6 4z" fill="currentColor"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-number">01</div>
+                    <div class="video-content">
+                        <h3>Savdoni oshirish</h3>
+                        <p>Mahsulotga to'g'ri narx qo'yish va sotish qanday bo'ladi?</p>
+                    </div>
+                    <div class="video-preview">
+                        <img src="photo/video-preview1.jpg" alt="Training video preview">
+                        <div class="video-overlay">
+                            <span class="video-tag">Trening haqida</span>
+                            <button class="play-button">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="12" fill="rgba(255, 255, 255, 0.2)"/>
+                                    <path d="M16 12l-6 4V8l6 4z" fill="currentColor"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-number">01</div>
+                    <div class="video-content">
+                        <h3>Savdoni oshirish</h3>
+                        <p>Mahsulotga to'g'ri narx qo'yish va sotish qanday bo'ladi?</p>
+                    </div>
+                    <div class="video-preview">
+                        <img src="photo/video-preview2.jpg" alt="Training video preview">
+                        <div class="video-overlay">
+                            <div class="video-title">
+                                <span class="highlight">BIZNESDA</span><br>
+                                <span class="highlight">SHERIK TANLASHDA</span><br>
+                                <span class="muted">ADASHMANG!</span>
+                            </div>
+                            <span class="video-tag">Trening haqida</span>
+                            <button class="play-button">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="12" fill="rgba(255, 255, 255, 0.2)"/>
+                                    <path d="M16 12l-6 4V8l6 4z" fill="currentColor"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="prev-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="next-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">IB</div>
-                <div class="footer-links">
-                    <a href="#about">Men Haqimda</a>
-                    <a href="#consulting">Biznes Konsultatsiya</a>
-                    <a href="#training">Treninglar</a>
-                    <a href="#contact">Bo'ylanish</a>
+            <div class="footer-main">
+                <div class="footer-left">
+                    <img src="photo/3.png" alt="Business consultant" class="footer-image">
+                </div>
+                <div class="footer-right">
+                    <h2 class="footer-title">Konsultatsiya</h2>
+                    <p class="footer-subtitle">Raqamingiz yoki elektron manzilingizni qoldiring, sizga aloqaga chiqamiz</p>
+                    <form class="footer-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your name" class="form-input">
+                            <input type="tel" placeholder="Phone number" class="form-input">
+                            <input type="email" placeholder="Email" class="form-input">
+                        </div>
+                        <button type="submit" class="form-button">TASDIQLASH</button>
+                    </form>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Ilhom Begimkulov. Barcha huquqlar himoyalangan.</p>
+                <div class="footer-info">
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>1772 Nevskaya Street NW, Suite 21388, Atlanta, GA 202344</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 789 123456</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>hello@containers.kt</span>
+                        </div>
+                    </div>
+                    <div class="copyright">
+                        <p>&copy; 2025 • All Rights Reserved</p>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                </div>
             </div>
         </div>
     </footer>

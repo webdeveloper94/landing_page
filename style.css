@@ -191,94 +191,93 @@ body {
     line-height: 1.8;
 }
 
-.hero-image {
-    position: relative;
+.hero-photo {
     flex: 1;
-    text-align: right;
-    display: inline-block;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
 }
 
-.hero-image img {
-    max-width: 100%;
+.photo-frame {
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+}
+
+.photo-frame img {
+    width: 100%;
     height: auto;
     display: block;
     position: relative;
-    border: 3px solid #fff;
-    padding: 2px;
-    background: #0a0a0a;
+    z-index: 2;
+}
+
+
+
+
+
+@media (max-width: 1024px) {
+    .hero-photo {
+        margin-top: 30px;
+        justify-content: center;
+    }
+    
+    .photo-frame {
+        max-width: 350px;
+    }
+    
+    .photo-frame::after {
+        top: 20px;
+        right: -20px;
+    }
+
+    .photo-frame::before {
+        top: 10px;
+        right: -10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-frame {
+        max-width: 280px;
+    }
+    
+    .photo-frame::after {
+        top: 15px;
+        right: -15px;
+    }
+
+    .photo-frame::before {
+        top: 8px;
+        right: -8px;
+    }
 }
 
 @media (max-width: 1024px) {
-    .hero-image {
-        padding: 20px;
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .hero-image::before,
-    .hero-image::after {
-        width: 100px;
-        height: 100px;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-image {
-        padding: 15px;
+    .hero-text h1 {
+        font-size: 60px;
     }
 
-    .hero-image::before,
-    .hero-image::after {
-        width: 80px;
-        height: 80px;
-        border-width: 2px;
-    }
-
-    .hero-image img {
-        border-width: 2px;
-        padding: 1px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-image {
-        padding: 12px;
-    }
-
-    .hero-image::before,
-    .hero-image::after {
-        width: 60px;
-        height: 60px;
+    .hero-text p {
+        margin: 0 auto;
     }
 }
 
 @media (max-width: 768px) {
-    .hero-image::before {
-        top: -10px;
-        right: -10px;
-        bottom: -10px;
-        left: -10px;
+    .hero-text h1 {
+        font-size: 48px;
     }
 }
 
 @media (max-width: 480px) {
-    .hero-image::before {
-        top: -8px;
-        right: -8px;
-        bottom: -8px;
-        left: -8px;
+    .hero-text h1 {
+        font-size: 36px;
     }
-}
-
-@media (max-width: 768px) {
-    .hero-image img {
-        padding: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-image img {
-        padding: 12px;
-        border-width: 2px;
-     }
 }
 
 /* Stats Section */
@@ -396,8 +395,8 @@ body {
 }
 
 blockquote {
-    font-family: 'Italiana', serif;
-    font-size: 24px;
+    font-family: 'Meie Script', serif;
+    font-size: 36px;
     line-height: 1.6;
     font-style: italic;
     color: #fff;
@@ -477,26 +476,6 @@ blockquote cite {
     
 }
 
-.training-image::after {
-    content: '';
-    position: absolute;
-    top: 20px;
-    bottom: -20px;
-    right: -20px;
-    width: 5px;
-    background: linear-gradient(to bottom, #ffffff, #a0a0a0);
-}
-
-.training-image::before {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
-    height: 5px;
-    width: 600px;
-    background: linear-gradient(to right, #ffffff, #a0a0a0);
-}
-
 
 /* Training Cards */
 .training-cards {
@@ -553,109 +532,85 @@ p {
 
 /* Kitobim Section */
 .kitobim {
-    padding: 100px 0;
+    padding: 120px 0;
     background-color: #000000;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
     position: relative;
-    overflow: hidden;
-}
-
-.kitobim .container {
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .kitobim .section-title {
     font-family: 'Italiana', serif;
-    font-size: 64px;
+    font-size: 48px;
     color: #fff;
     text-align: center;
     margin-bottom: 80px;
-    font-weight: 400;
-    letter-spacing: 1px;
+    font-weight: normal;
 }
 
 .kitobim-content {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 100px;
+    align-items: center;
+    gap: 120px;
+    margin-top: 60px;
 }
 
 .book-showcase {
     flex: 1;
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    perspective: 1500px;
-    padding: 40px;
-    cursor: pointer;
-    min-height: 600px;
+    justify-content: flex-end;
+}
+
+.book-frame {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
 }
 
 .book {
     width: 100%;
-    max-width: 400px;
     height: auto;
-    position: absolute;
-    transition: all 0.5s ease;
+    display: block;
+    transform: perspective(1000px) rotateY(-25deg);
     transform-origin: left center;
-    opacity: 0;
+    position: relative;
+    z-index: 2;
 }
 
-.book.back {
-    transform: translateX(-20px) translateY(15px) rotateY(-25deg);
-    filter: brightness(0.85) drop-shadow(0 25px 45px rgba(0, 0, 0, 0.6));
-    animation: fadeInBookBack 1s ease forwards;
-    animation-delay: 0.3s;
-}
-
-.book.front {
-    transform: rotateY(-25deg);
-    filter: drop-shadow(0 25px 45px rgba(0, 0, 0, 0.6));
+.book-frame::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 1;
-    animation: fadeInBook 1s ease forwards;
-    animation-delay: 0.6s;
-}
-
-.book-showcase:hover .book.back {
-    transform: translateX(-30px) translateY(20px) rotateY(-28deg);
-}
-
-.book-showcase:hover .book.front {
-    transform: translateX(-5px) rotateY(-28deg);
 }
 
 .book-info {
     flex: 1;
     max-width: 500px;
-    padding-top: 40px;
 }
 
 .book-info .subtitle {
-    color: #888;
-    font-size: 16px;
-    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
     display: block;
-    letter-spacing: 0.5px;
 }
 
 .book-info h2 {
-    font-family: 'Italiana', serif;
-    font-size: 56px;
+    font-size: 48px;
     color: #fff;
-    margin-bottom: 50px;
-    line-height: 1.1;
-    font-weight: 400;
+    margin-bottom: 40px;
+    font-weight: 600;
 }
 
 .features {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+    display: grid;
+    gap: 16px;
 }
 
 .feature-item {
@@ -663,33 +618,30 @@ p {
     align-items: flex-start;
     gap: 16px;
     padding: 16px;
-    background: rgba(37, 37, 37, 0.4);
-    border-radius: 16px;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
 }
 
 .feature-item:hover {
-    background: rgba(37, 37, 37, 0.6);
-    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .feature-icon {
     width: 40px;
     height: 40px;
-    color: #00A3FF;
-    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 163, 255, 0.1);
+    color: #fff;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
-    transition: all 0.3s ease;
 }
 
-.feature-item:hover .feature-icon {
-    background: rgba(0, 163, 255, 0.2);
-    transform: scale(1.05);
+.feature-icon svg {
+    width: 24px;
+    height: 24px;
 }
 
 .feature-text h3 {
@@ -702,98 +654,56 @@ p {
 .feature-text p {
     color: rgba(255, 255, 255, 0.6);
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.6;
     margin: 0;
 }
 
-@keyframes fadeInBook {
-    from {
-        opacity: 0;
-        transform: translateY(30px) rotateY(-25deg);
-    }
-    to {
-        opacity: 1;
-        transform: rotateY(-25deg);
-    }
-}
-
-@keyframes fadeInBookBack {
-    from {
-        opacity: 0;
-        transform: translateY(30px) rotateY(-25deg);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(-20px) translateY(15px) rotateY(-25deg);
-    }
-}
-
-@media (max-width: 1200px) {
-    .section-title {
-        font-size: 56px;
-        margin-bottom: 60px;
-    }
-
-    .kitobim-content {
-        gap: 60px;
-    }
-
-    .book-info h2 {
-        font-size: 48px;
-    }
-}
-
 @media (max-width: 1024px) {
-    .kitobim .container {
-        max-width: 90%;
+    .kitobim {
+        padding: 80px 0;
     }
 
     .kitobim-content {
         flex-direction: column;
-        text-align: center;
-        gap: 50px;
         align-items: center;
+        gap: 60px;
     }
 
     .book-showcase {
-        padding: 20px;
-        margin-bottom: 30px;
-        min-height: 500px;
-        width: 100%;
-        max-width: 600px;
+        justify-content: center;
     }
 
-    .book {
-        max-width: 450px;
+    .book-frame {
+        max-width: 400px;
     }
 
     .book-info {
         max-width: 100%;
-        padding-top: 0;
+        text-align: center;
+    }
+
+    .features {
+        max-width: 600px;
+        margin: 0 auto;
     }
 
     .feature-item {
         text-align: left;
     }
-
-    .feature-item:hover {
-        transform: translateX(0);
-    }
 }
 
 @media (max-width: 768px) {
-    .kitobim .container {
-        max-width: 95%;
+    .kitobim {
+        padding: 60px 0;
     }
 
-    .section-title {
-        font-size: 42px;
+    .kitobim .section-title {
+        font-size: 36px;
         margin-bottom: 40px;
     }
 
-    .kitobim {
-        padding: 60px 0;
-        min-height: auto;
+    .book-frame {
+        max-width: 320px;
     }
 
     .book-info h2 {
@@ -801,64 +711,40 @@ p {
         margin-bottom: 30px;
     }
 
-    .book-showcase {
-        padding: 15px;
-        margin-bottom: 20px;
-        min-height: 450px;
-        max-width: 500px;
-    }
-
-    .book {
-        max-width: 380px;
-    }
-
     .features {
-        gap: 16px;
+        gap: 12px;
     }
 
     .feature-item {
         padding: 12px;
+        gap: 12px;
     }
 }
 
 @media (max-width: 480px) {
-    .kitobim .container {
-        max-width: 100%;
-        padding: 0 15px;
+    .kitobim {
+        padding: 40px 0;
     }
 
-    .book-showcase {
-        min-height: 400px;
-        padding: 10px;
-        max-width: 400px;
+    .kitobim .section-title {
+        font-size: 32px;
+        margin-bottom: 30px;
     }
 
-    .book {
-        max-width: 340px;
+    .book-frame {
+        max-width: 260px;
     }
 
-    .book.back {
-        transform: translateX(-15px) translateY(10px) rotateY(-25deg);
+    .book-info h2 {
+        font-size: 28px;
     }
 
-    .book.front {
-        transform: rotateY(-25deg);
+    .feature-text h3 {
+        font-size: 16px;
     }
 
-    .book-showcase:hover .book.back {
-        transform: translateX(-20px) translateY(15px) rotateY(-28deg);
-    }
-
-    .book-showcase:hover .book.front {
-        transform: translateX(-3px) rotateY(-28deg);
-    }
-
-    .features {
-        gap: 15px;
-    }
-
-    .feature-item {
-        padding: 15px;
+    .feature-text p {
+        font-size: 13px;
     }
 }
 

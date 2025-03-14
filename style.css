@@ -8,7 +8,7 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #000000;
+    background-color: #1B1B1B;
     color: #ffffff;
 }
 
@@ -161,7 +161,7 @@ body {
 .hero {
     min-height: 100vh;
     padding-top: 100px;
-    background-color: #000000;
+    background-color: #1B1B1B;
 }
 
 .hero-content {
@@ -284,38 +284,92 @@ body {
 .stats {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 20px 0;
-    margin-top: 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    justify-content: center;
+    gap: 80px;
+    padding: 40px 0;
+    margin-top: 60px;
 }
 
 .stat-item {
-    text-align: left;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    min-width: 120px;
 }
 
 .stat-number {
-    font-size: 28px;
+    font-size: 42px;
+    font-weight: 600;
     color: #fff;
-    margin-bottom: 4px;
-    font-weight: 500;
+    line-height: 1;
+}
+
+.stat-underline {
+    width: 40px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 5px 0;
 }
 
 .stat-label {
-    color: #666;
-    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
     text-transform: capitalize;
+    letter-spacing: 0.5px;
 }
 
 .stat-divider {
     width: 1px;
-    height: 40px;
+    height: 60px;
     background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .stats {
+        gap: 40px;
+        padding: 30px 0;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .stat-item {
+        flex: 0 0 calc(50% - 30px);
+    }
+
+    .stat-divider {
+        display: none;
+    }
+
+    .stat-number {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats {
+        gap: 30px;
+        padding: 20px 0;
+    }
+
+    .stat-item {
+        flex: 0 0 100%;
+    }
+
+    .stat-number {
+        font-size: 32px;
+    }
+
+    .stat-label {
+        font-size: 14px;
+    }
 }
 
 /* Projects Section */
 .projects {
     padding: 100px 0;
+    background-color: #1B1B1B;
 }
 
 .projects h2 {
@@ -338,6 +392,8 @@ body {
     padding: 30px;
     border-radius: 15px;
     transition: transform 0.3s ease;
+    margin-right: 10px;
+    
 }
 
 .project-card:hover {
@@ -345,29 +401,27 @@ body {
 }
 
 .project-icon {
-    width: 50px;
-    height: 50px;
-    background-color: #1a1a1a;
-    border-radius: 50%;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
 }
 
-.project-icon.red {
-    background-color: #ff4444;
-}
+
 
 .project-icon img {
-    width: 24px;
-    height: 24px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
 }
+
 
 .project-card h3 {
     font-size: 20px;
     margin-bottom: 15px;
     color: #fff;
+    display: flex;
+    align-items: center;
 }
 
 .project-card p {
@@ -392,6 +446,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 40px 0;
+    background-color: #1B1B1B;
 }
 
 blockquote {
@@ -415,7 +470,7 @@ blockquote cite {
 /* Training Section */
 .training {
     padding: 100px 0;
-    background-color: #000000;
+    background-color: #1B1B1B;
     position: relative;
 }
 
@@ -453,16 +508,7 @@ blockquote cite {
     line-height: 1.6;
 }
 
-.features-list li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 8px;
-    width: 8px;
-    height: 8px;
-    background-color: #00A3FF;
-    border-radius: 50%;
-}
+
 
 
 .training-image {
@@ -486,14 +532,14 @@ blockquote cite {
 }
 
 .training-card {
-    background: linear-gradient(135deg, #292929, #1e1e1e);
+    background: linear-gradient(135deg, #171616, #9b9b9b);
     padding: 15px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -525,15 +571,16 @@ p {
 }
 
 /* Har xil o‘lchamdagi kartalar */
-.card-small { height: 80px; width: 180px; }
-.card-medium { height: 100px; width: 220px; }
-.card-large { height: 140px; width: 250px; }
+.card-3 { height: 156px; width: 230px; margin-left: 30px; margin-top: 30px; }
+.card-2 { height: 152px; width: 195px; margin-left: 30px; margin-top: 30px; }
+.card-large { height: 188px; width: 258px; }
+.card-4 { height: 156px; width: 217px; margin-left: 50px; margin-top: 30px; }
 
 
 /* Kitobim Section */
 .kitobim {
-    padding: 120px 0;
-    background-color: #000000;
+    padding: 100px 0;
+    background-color: #1B1B1B;
     position: relative;
 }
 
@@ -576,16 +623,7 @@ p {
     z-index: 2;
 }
 
-.book-frame::after {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    right: -20px;
-    bottom: -20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    z-index: 1;
-}
+
 
 .book-info {
     flex: 1;
@@ -617,8 +655,7 @@ p {
     display: flex;
     align-items: flex-start;
     gap: 16px;
-    padding: 16px;
-    background: rgba(255, 255, 255, 0.05);
+    padding: 16px;   
     border-radius: 8px;
     transition: background-color 0.3s ease;
 }
@@ -628,15 +665,14 @@ p {
 }
 
 .feature-icon {
-    width: 40px;
-    height: 40px;
+    width: 47px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
     flex-shrink: 0;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
+    
 }
 
 .feature-icon svg {
@@ -751,7 +787,7 @@ p {
 /* Contact Section */
 .contact {
     padding: 100px 0;
-    background-color: #000000;
+    background-color: #1B1B1B;
 }
 
 .contact-content {
@@ -848,7 +884,7 @@ p {
     border: none;
 }
 
-/* Footer Updates */
+/* Footer */
 .footer {
     background-color: #141414;
     padding: 0;
@@ -1160,14 +1196,13 @@ p {
         padding: 0 0 24px;
     }
 }
-
 /* Foydali Section */
 .foydali {
     padding: 100px 0;
-    background-color: #000000;
     min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .foydali .container {
@@ -1199,43 +1234,57 @@ p {
     grid-column: 1 / -1;
     align-items: center;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    gap: 24px;
 }
 
 .video-number {
-    font-size: 32px;
+    font-size: 12px;
     font-weight: 600;
     color: #fff;
-    opacity: 0.9;
+    background-color: #3a3a3a;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    display: block; /* Yangi qatordan chiqishini ta'minlaydi */
+    text-align: center;
+    line-height: 64px;
+    margin: 0 auto 10px; /* Pastga biroz masofa qo‘shamiz */
 }
 
 .video-title {
-    font-size: 18px;
+    font-size: 26px;
     font-weight: 500;
     color: #fff;
     margin: 0;
+    margin-left: 100px;
+}
+.video-container {
+    display: flex;
+    flex-direction: column; /* Elementlarni vertikal joylashtirish */
+    align-items: left; /* Markazga joylash */
 }
 
+
 .video-description {
-    font-size: 15px;
+    font-size: 16px;
     color: rgba(255, 255, 255, 0.7);
     margin: 0;
     line-height: 1.4;
+    margin-left: 80px;
 }
 
 .video-preview {
-    position: relative;
+    width: 100%;
     border-radius: 8px;
     overflow: hidden;
     aspect-ratio: 16/9;
+    margin-left: 80px;
+    background-color: #000;
 }
 
-.video-preview img {
+.video-preview iframe {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    border: none;
 }
 
 .video-overlay {
@@ -1383,6 +1432,7 @@ p {
 .next-button:hover {
     border-color: rgba(255, 255, 255, 0.3);
     background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
 }
 
 /* Responsive Design */
@@ -1521,19 +1571,10 @@ p {
         font-size: 48px;
     }
 
-    .stats {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .stat-item {
-        text-align: center;
-    }
-
-    .stat-divider {
-        width: 100%;
-        height: 1px;
-    }
+    
+    
+    
+    
 
     .projects-grid {
         grid-template-columns: 1fr;

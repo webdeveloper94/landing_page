@@ -7,6 +7,84 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+    .stats-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: #282828;
+        padding: 50px;
+        align-items: center;
+        color: #ffffff;
+        z-index: 5;
+        
+    }
+    
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        position: relative;
+    }
+
+    .stat-item {
+        text-align: left;
+    }
+    
+    .stat-number {
+        font-size: 32px;
+        font-family: inter;
+        font-weight: bold;
+        display: block;
+        margin-bottom: 15px;
+    }
+    
+    .stat-number:first-child {
+        font-size: 48px;
+    }
+    
+    .line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px; /* Qalinligini biroz oshirdim */
+    background: linear-gradient(to right, #fff 30%, rgba(255, 255, 255, 0.3) 30%);
+    top: 63px; /* Joylashuvini o'zgartirmasdan qoldirdim */
+}
+
+    
+    .stat-label {
+        font-size: 14px;
+        display: block;
+        margin-top: 0px;
+    }
+    
+    @media (max-width: 768px) {
+        .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .line {
+            display: none;
+        }
+        
+        .stat-item {
+            border-bottom: 1px solid #fff;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .stat-label {
+            margin-top: 15px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .stats-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
 </head>
 <body>
     <!-- Navbar -->
@@ -26,7 +104,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero bg-dark">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
@@ -39,36 +117,40 @@
                     </div>
                 </div>
             </div>
-            <div class="stats">
-                <div class="stat-item">
-                    <div class="stat-number">+1500</div>
-                    <div class="stat-label">Shogirdlar</div>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <div class="stat-number">+15</div>
-                    <div class="stat-label">Tajriba</div>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <div class="stat-number">+10</div>
-                    <div class="stat-label">Loyihalar</div>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <div class="stat-number">+10</div>
-                    <div class="stat-label">Treninglar</div>
-                </div>
-            </div>
         </div>
     </section>
+        
+    <div class="stats-container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                    <span class="stat-number">+1500</span>
+                    <span class="stat-label">Shogirdlar</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">+15</span>
+                    <span class="stat-label">Tajriba</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">+10</span>
+                    <span class="stat-label">Loyihalar</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">+10</span>
+                    <span class="stat-label">Treninglar</span>
+                </div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+    
+    
 
    
 
     
 
     <!-- Business Projects Section -->
-    <section id="projects" class="projects">
+    <section id="projects" class="projects bg-dark">
         <div class="container">
             <h2>Biznes loyihalarim</h2>
             <div class="projects-grid">
@@ -81,8 +163,8 @@
                     <a href="#" class="project-link">51 ta xodimlar</a>
                 </div>
                 <div class="project-card">
-                    <div class="project-icon red">
-                        <img src="icons/company2.svg" alt="Company icon">
+                    <div class="project-icon">
+                        <img src="photo/logo2.jpeg" alt="Company icon">
                     </div>
                     <h3>Name of the company</h3>
                     <p>Make the appearance of a mobile application that has quality and increases user convenience Make the appearance of a mobile application that has quality and increases user convenience</p>
@@ -90,7 +172,7 @@
                 </div>
                 <div class="project-card">
                     <div class="project-icon">
-                        <img src="icons/company3.svg" alt="Company icon">
+                        <img src="photo/logo1.jpeg" alt="Company icon">
                     </div>
                     <h3>Name of the company</h3>
                     <p>Make the appearance of a mobile application that has quality and increases user convenience Make the appearance of a mobile application that has quality and increases user convenience</p>
@@ -107,59 +189,77 @@
         </div>
     </section>
 <!-- Training Section -->
-<section id="training" class="training">
+<section id="training" class="training bg-dark">
     <div class="container">
         <div class="training-content">
             <div class="training-info">
                 <h2>Treninglar</h2>
                 <ul class="features-list">
-                    <li>работает 24/7</li>
-                    <li>100% точность и корректность ответов</li>
-                    <li>при необходимости, подключают живого специалиста</li>
-                    <li>не берет больничный и никогда не уволится</li>
+                    <li>
+                        <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.07595 0.341774L0.409291 8.00843C0.0464939 8.37123 0.299771 8.99415 0.820011 8.99415L8.4867 8.99418C8.80158 8.99418 9.0617 8.73407 9.06177 8.41911L9.06174 0.752424C9.06167 0.232253 8.43875 -0.0210238 8.07595 0.341774Z" fill="#CFCFCF"/>
+                        </svg>работает 24/7</li>
+                    <li><svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.07595 0.341774L0.409291 8.00843C0.0464939 8.37123 0.299771 8.99415 0.820011 8.99415L8.4867 8.99418C8.80158 8.99418 9.0617 8.73407 9.06177 8.41911L9.06174 0.752424C9.06167 0.232253 8.43875 -0.0210238 8.07595 0.341774Z" fill="#CFCFCF"/>
+                        </svg> 
+                        
+                         100% точность и корректность ответов</li>
+                    <li><svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.07595 0.341774L0.409291 8.00843C0.0464939 8.37123 0.299771 8.99415 0.820011 8.99415L8.4867 8.99418C8.80158 8.99418 9.0617 8.73407 9.06177 8.41911L9.06174 0.752424C9.06167 0.232253 8.43875 -0.0210238 8.07595 0.341774Z" fill="#CFCFCF"/>
+                        </svg>
+                        
+                        при необходимости, подключают живого специалиста</li>
+                    <li><svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.07595 0.341774L0.409291 8.00843C0.0464939 8.37123 0.299771 8.99415 0.820011 8.99415L8.4867 8.99418C8.80158 8.99418 9.0617 8.73407 9.06177 8.41911L9.06174 0.752424C9.06167 0.232253 8.43875 -0.0210238 8.07595 0.341774Z" fill="#CFCFCF"/>
+                        </svg>
+                        
+                        не берет больничный и никогда не уволится</li>
                 </ul>
                 <div class="training-cards">
                     <div class="training-card card-large">
                         <div class="card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M12 21a9 9 0 100-18 9 9 0 000 18z" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M12 8v8" stroke="currentColor" stroke-width="1.5"/>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="3" width="18" height="18" stroke="currentColor" stroke-width="2"/>
+                                <rect x="7" y="14" width="2" height="5" fill="currentColor"/>
+                                <rect x="11" y="10" width="2" height="9" fill="currentColor"/>
+                                <rect x="15" y="12" width="2" height="7" fill="currentColor"/>
                             </svg>
+                            
                         </div>
-                        <p>Trening 2</p>
+                        <p>Trening 1</p>
                     </div>
             
-                    <div class="training-card card-medium">
+                    <div class="training-card card-2">
                         <div class="card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M7 12l3 3 7-7" stroke="currentColor" stroke-width="1.5"/>
-                            </svg>
+                            <svg width="28" height="27" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.29167 0.375V23.7083H26.625V26.625H0.375V0.375H3.29167ZM25.5938 5.17713L27.6562 7.23954L19.3333 15.5624L14.9583 11.1885L8.69787 17.4479L6.63546 15.3855L14.9583 7.06261L19.3333 11.4365L25.5938 5.17713Z" fill="white"/>
+                                </svg>
+                                
                         </div>
-                        <p>Trening 3</p>
+                        <p>Trening 2</p>
                     </div>
             
                     <div class="">
                        
                     </div>
             
-                    <div class="training-card card-small">
+                    <div class="training-card card-3">
                         <div class="card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M4 4h16v16H4V4z" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M8 12l3 3 6-6" stroke="currentColor" stroke-width="1.5"/>
-                            </svg>
+                            <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.27738 4.20773C12.0057 -0.48576 20.472 -0.158977 25.8192 5.1881C31.5143 10.8833 31.5143 20.1169 25.8192 25.8121C20.1239 31.5072 10.8903 31.5072 5.19516 25.8121C1.5136 22.1305 0.21195 16.9702 1.29017 12.2431L1.40194 11.7871L4.22298 12.5297C3.20578 16.4086 4.21731 20.7094 7.25755 23.7497C11.8137 28.3057 19.2005 28.3057 23.7567 23.7497C28.3128 19.1936 28.3128 11.8066 23.7567 7.25051C19.6477 3.14144 13.2359 2.73825 8.6751 6.04097L8.35251 6.28317L9.83555 7.7661L3.13276 9.3129L4.67955 2.61012L6.27738 4.20773ZM16.9655 6.75008V9.66675H20.6113V12.5834H12.5905C12.1878 12.5834 11.8613 12.9099 11.8613 13.3126C11.8613 13.6706 12.1192 13.9682 12.4594 14.0299L12.5905 14.0417H18.4238C20.4373 14.0417 22.0697 15.6741 22.0697 17.6876C22.0697 19.7011 20.4373 21.3334 18.4238 21.3334H16.9655V24.2501H14.0488V21.3334H10.403V18.4167H18.4238C18.8265 18.4167 19.153 18.0902 19.153 17.6876C19.153 17.3296 18.895 17.0319 18.5549 16.9702L18.4238 16.9584H12.5905C10.5769 16.9584 8.94462 15.3261 8.94462 13.3126C8.94462 11.299 10.5769 9.66675 12.5905 9.66675H14.0488V6.75008H16.9655Z" fill="white"/>
+                                </svg>
+                                
                         </div>
-                        <p>Trening 5</p>
+                        <p>Trening 3</p>
                     </div>
             
-                    <div class="training-card card-medium">
+                    <div class="training-card card-4">
                         <div class="card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M4 4h16v16H4V4z" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M7 12l3 3 7-7" stroke="currentColor" stroke-width="1.5"/>
+                            <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.125 1.58437V4.68146C6.84943 6.41217 3.83335 10.6039 3.83335 15.5001C3.83335 21.9434 9.05669 27.1667 15.5 27.1667C20.3962 27.1667 24.5879 24.1506 26.3187 19.8751H29.4157C27.5574 25.7917 22.0299 30.0834 15.5 30.0834C7.44586 30.0834 0.916687 23.5542 0.916687 15.5001C0.916687 8.97019 5.2084 3.44268 11.125 1.58437ZM15.5 0.916748C23.5541 0.916748 30.0834 7.44592 30.0834 15.5001C30.0834 15.9923 30.059 16.4788 30.0113 16.9584H14.0417V0.988761C14.5213 0.941131 15.0078 0.916748 15.5 0.916748ZM16.9584 3.92367V14.0417H27.0764C26.4184 8.76445 22.2356 4.58174 16.9584 3.92367Z" fill="white"/>
                             </svg>
                         </div>
-                        <p>Trening 6</p>
+                        <p>Trening 4</p>
                     </div>
                 </div>
             </div>
@@ -171,14 +271,13 @@
 </section>
     
     <!-- Kitobim Section -->
-    <section id="kitobim" class="kitobim">
+    <section id="kitobim" class="kitobim bg-dark">
         <div class="container">
             <h1 class="section-title">Kitobim</h1>
             <div class="kitobim-content">
                 <div class="book-showcase">
                     <div class="book-frame">
                         <img src="photo/Frame 1000007843.svg" alt="Biznes Shpargalka" class="book back">
-                        <!-- <img src="photo/book1.png" alt="Biznes Shpargalka" class="book front"> -->
                     </div>
                 </div>
                 <div class="book-info">
@@ -187,9 +286,9 @@
                     <div class="features">
                         <div class="feature-item">
                             <div class="feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="1.5"/>
-                                    <path d="M8 12l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <svg width="47" height="48" viewBox="0 0 47 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect opacity="0.2" width="47" height="48" rx="13" fill="white"/>
+                                    <path d="M22.1244 13.0908H23.8753L23.9269 13.9452C24.2227 18.8506 28.1493 22.7772 33.0546 23.0731L33.909 23.1246V24.8756L33.0546 24.9271C28.1493 25.223 24.2227 29.1497 23.9269 34.055L23.8753 34.9094H22.1244L22.0728 34.055C21.777 29.1497 17.8504 25.223 12.9452 24.9271L12.0908 24.8756V23.1246L12.9452 23.0731C17.8504 22.7772 21.777 18.8506 22.0728 13.9452L22.1244 13.0908ZM22.9999 17.8501C21.83 20.6154 19.6151 22.8303 16.85 24.0001C19.6151 25.17 21.83 27.3849 22.9999 30.1501C24.1697 27.3849 26.3846 25.17 29.1498 24.0001C26.3846 22.8303 24.1697 20.6154 22.9999 17.8501Z" fill="white"/>
                                 </svg>
                             </div>
                             <div class="feature-text">
@@ -199,10 +298,11 @@
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="1.5"/>
-                                    <path d="M8 12l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <svg width="47" height="48" viewBox="0 0 47 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect opacity="0.2" width="47" height="48" rx="13" fill="white"/>
+                                    <path d="M22.1244 13.0908H23.8753L23.9269 13.9452C24.2227 18.8506 28.1493 22.7772 33.0546 23.0731L33.909 23.1246V24.8756L33.0546 24.9271C28.1493 25.223 24.2227 29.1497 23.9269 34.055L23.8753 34.9094H22.1244L22.0728 34.055C21.777 29.1497 17.8504 25.223 12.9452 24.9271L12.0908 24.8756V23.1246L12.9452 23.0731C17.8504 22.7772 21.777 18.8506 22.0728 13.9452L22.1244 13.0908ZM22.9999 17.8501C21.83 20.6154 19.6151 22.8303 16.85 24.0001C19.6151 25.17 21.83 27.3849 22.9999 30.1501C24.1697 27.3849 26.3846 25.17 29.1498 24.0001C26.3846 22.8303 24.1697 20.6154 22.9999 17.8501Z" fill="white"/>
                                 </svg>
+                                
                             </div>
                             <div class="feature-text">
                                 <h3>Xatolardan xulosalar</h3>
@@ -211,9 +311,9 @@
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="1.5"/>
-                                    <path d="M8 12l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <svg width="47" height="48" viewBox="0 0 47 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect opacity="0.2" width="47" height="48" rx="13" fill="white"/>
+                                    <path d="M22.1244 13.0908H23.8753L23.9269 13.9452C24.2227 18.8506 28.1493 22.7772 33.0546 23.0731L33.909 23.1246V24.8756L33.0546 24.9271C28.1493 25.223 24.2227 29.1497 23.9269 34.055L23.8753 34.9094H22.1244L22.0728 34.055C21.777 29.1497 17.8504 25.223 12.9452 24.9271L12.0908 24.8756V23.1246L12.9452 23.0731C17.8504 22.7772 21.777 18.8506 22.0728 13.9452L22.1244 13.0908ZM22.9999 17.8501C21.83 20.6154 19.6151 22.8303 16.85 24.0001C19.6151 25.17 21.83 27.3849 22.9999 30.1501C24.1697 27.3849 26.3846 25.17 29.1498 24.0001C26.3846 22.8303 24.1697 20.6154 22.9999 17.8501Z" fill="white"/>
                                 </svg>
                             </div>
                             <div class="feature-text">
@@ -223,9 +323,9 @@
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="1.5"/>
-                                    <path d="M8 12l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <svg width="47" height="48" viewBox="0 0 47 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect opacity="0.2" width="47" height="48" rx="13" fill="white"/>
+                                    <path d="M22.1244 13.0908H23.8753L23.9269 13.9452C24.2227 18.8506 28.1493 22.7772 33.0546 23.0731L33.909 23.1246V24.8756L33.0546 24.9271C28.1493 25.223 24.2227 29.1497 23.9269 34.055L23.8753 34.9094H22.1244L22.0728 34.055C21.777 29.1497 17.8504 25.223 12.9452 24.9271L12.0908 24.8756V23.1246L12.9452 23.0731C17.8504 22.7772 21.777 18.8506 22.0728 13.9452L22.1244 13.0908ZM22.9999 17.8501C21.83 20.6154 19.6151 22.8303 16.85 24.0001C19.6151 25.17 21.83 27.3849 22.9999 30.1501C24.1697 27.3849 26.3846 25.17 29.1498 24.0001C26.3846 22.8303 24.1697 20.6154 22.9999 17.8501Z" fill="white"/>
                                 </svg>
                             </div>
                             <div class="feature-text">
@@ -240,82 +340,83 @@
     </section>
 
     <!-- Foydali Section -->
-    <section id="foydali" class="foydali">
+    <section id="foydali" class="foydali bg-dark">
         <div class="container">
             <h1 class="section-title">Foydali</h1>
             <div class="video-grid">
                 <div class="video-card">
-                    <div class="video-number">01</div>
-                    <h3 class="video-title">Savdoni oshirish</h3>
+                    <div class="video-container">
+                        <div class="video-number">01</div>
+                        <h3 class="video-title">Savdoni oshirish</h3>
+                    </div>
                     <p class="video-description">Mahsulotga to'g'ri narx qo'yish va sotish qanday bo'ladi?</p>
                     <div class="video-preview">
-                        <img src="photo/video-preview1.jpg" alt="Training video preview">
-                        <div class="video-overlay">
-                            <span class="video-tag">Trening haqida</span>
-                            <button class="play-button">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <circle cx="12" cy="12" r="12" fill="rgba(255, 255, 255, 0.2)"/>
-                                    <path d="M16 12l-6 4V8l6 4z" fill="currentColor"/>
-                                </svg>
-                            </button>
-                        </div>
+                        <iframe 
+                            width="100%" 
+                            height="100%" 
+                            src="https://www.youtube.com/embed/6YyZD9zLMuk" 
+                            title="Savdoni oshirish" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
 
                 <div class="video-card">
-                    <div class="video-number">02</div>
-                    <h3 class="video-title">Savdoni oshirish</h3>
+                    <div class="video-container">
+                        <div class="video-number">02</div>
+                        <h3 class="video-title">Savdoni oshirish</h3>
+                    </div>
                     <p class="video-description">Mahsulotga to'g'ri narx qo'yish va sotish qanday bo'ladi?</p>
                     <div class="video-preview">
-                        <img src="photo/video-preview2.jpg" alt="Training video preview">
-                        <div class="video-overlay">
-                            <div class="video-title">
-                                
-                            </div>
-                            <span class="video-tag">Trening haqida</span>
-                            <button class="play-button">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <circle cx="12" cy="12" r="12" fill="rgba(255, 255, 255, 0.2)"/>
-                                    <path d="M16 12l-6 4V8l6 4z" fill="currentColor"/>
-                                </svg>
-                            </button>
-                        </div>
+                        <iframe 
+                            width="100%" 
+                            height="100%" 
+                            src="https://www.youtube.com/embed/6YyZD9zLMuk" 
+                            title="Savdoni oshirish" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
 
                 <div class="video-card">
-                    <div class="video-number">03</div>
-                    <h3 class="video-title">Savdoni oshirish</h3>
+                    <div class="video-container">
+                        <div class="video-number">03</div>
+                        <h3 class="video-title">Savdoni oshirish</h3>
+                    </div>
                     <p class="video-description">Mahsulotga to'g'ri narx qo'yish va sotish qanday bo'ladi?</p>
                     <div class="video-preview">
-                        <img src="photo/video-preview1.jpg" alt="Training video preview">
-                        <div class="video-overlay">
-                            <span class="video-tag">Trening haqida</span>
-                            <button class="play-button">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <circle cx="12" cy="12" r="12" fill="rgba(255, 255, 255, 0.2)"/>
-                                    <path d="M16 12l-6 4V8l6 4z" fill="currentColor"/>
-                                </svg>
-                            </button>
-                        </div>
+                        <iframe 
+                            width="100%" 
+                            height="100%" 
+                            src="https://www.youtube.com/embed/6YyZD9zLMuk" 
+                            title="Savdoni oshirish" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
 
                 <div class="video-card">
-                    <div class="video-number">04</div>
-                    <h3 class="video-title">Savdoni oshirish</h3>
+                    <div class="video-container">
+                        <div class="video-number">04</div>
+                        <h3 class="video-title">Savdoni oshirish</h3>
+                    </div>
                     <p class="video-description">Mahsulotga to'g'ri narx qo'yish va sotish qanday bo'ladi?</p>
                     <div class="video-preview">
-                        <img src="photo/video-preview2.jpg" alt="Training video preview">
-                        <div class="video-overlay">
-                            <span class="video-tag">Trening haqida</span>
-                            <button class="play-button">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <circle cx="12" cy="12" r="12" fill="rgba(255, 255, 255, 0.2)"/>
-                                    <path d="M16 12l-6 4V8l6 4z" fill="currentColor"/>
-                                </svg>
-                            </button>
-                        </div>
+                        <iframe 
+                            width="100%" 
+                            height="100%" 
+                            src="https://www.youtube.com/embed/6YyZD9zLMuk" 
+                            title="Savdoni oshirish" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
             </div>

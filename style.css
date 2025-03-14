@@ -212,71 +212,202 @@ body {
     z-index: 2;
 }
 
-
-
-
-
-@media (max-width: 1024px) {
-    .hero-photo {
-        margin-top: 30px;
-        justify-content: center;
-    }
-    
-    .photo-frame {
-        max-width: 350px;
-    }
-    
-    .photo-frame::after {
-        top: 20px;
-        right: -20px;
-    }
-
-    .photo-frame::before {
-        top: 10px;
-        right: -10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .photo-frame {
-        max-width: 280px;
-    }
-    
-    .photo-frame::after {
-        top: 15px;
-        right: -15px;
-    }
-
-    .photo-frame::before {
-        top: 8px;
-        right: -8px;
-    }
-}
-
 @media (max-width: 1024px) {
     .hero-content {
-        flex-direction: column;
-        text-align: center;
+        max-width: 600px;
     }
 
     .hero-text h1 {
-        font-size: 60px;
+        font-size: 56px;
     }
 
     .hero-text p {
-        margin: 0 auto;
+        font-size: 18px;
     }
 }
 
 @media (max-width: 768px) {
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+        padding: 60px 0;
+    }
+
     .hero-text h1 {
         font-size: 48px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+        margin: 0 auto 30px;
+        max-width: 500px;
     }
 }
 
 @media (max-width: 480px) {
+    .hero-content {
+        padding: 40px 0;
+    }
+
     .hero-text h1 {
-        font-size: 36px;
+        font-size: 32px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+        max-width: 100%;
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+        padding: 0 20px;
+    }
+
+    .hero-content {
+        max-width: 600px;
+    }
+
+    .hero-title {
+        font-size: 56px;
+    }
+
+    .hero-description {
+        font-size: 18px;
+    }
+
+    .navbar {
+        padding: 20px 0;
+    }
+
+    .nav-links {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+        padding: 60px 0;
+    }
+
+    .hero-title {
+        font-size: 48px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+        margin: 0 auto 30px;
+        max-width: 500px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .navbar {
+        padding: 15px 0;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+
+    .hero-title {
+        font-size: 40px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+        max-width: 400px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .navbar {
+        position: relative;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #1B1B1B;
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero-content {
+        padding: 40px 0;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+        max-width: 100%;
+    }
+
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .nav-links {
+        padding: 15px;
+    }
+
+    .nav-link {
+        font-size: 13px;
+    }
+
+    .logo {
+        font-size: 20px;
     }
 }
 
@@ -1652,4 +1783,153 @@ p {
 .contact-info .social-link svg,
 .contact-info .social-link:hover svg {
     display: none;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+        padding: 0 20px;
+    }
+
+    .stats-container {
+        padding: 40px 20px;
+    }
+
+    .stats-grid {
+        gap: 15px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+
+    .stats-container {
+        padding: 30px 15px;
+    }
+
+    .stat-number {
+        font-size: 28px;
+    }
+
+    .stat-label {
+        font-size: 13px;
+    }
+
+    .kitobim-content {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .book-showcase {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .book-info {
+        text-align: center;
+        max-width: 600px;
+    }
+
+    .features-list {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .line {
+        display: none;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .video-preview {
+        margin-left: 0;
+    }
+
+    .video-title {
+        margin-left: 20px;
+        font-size: 22px;
+    }
+
+    .video-description {
+        margin-left: 20px;
+        font-size: 14px;
+    }
+
+    .video-number {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .stats-container {
+        padding: 20px 10px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .stat-number {
+        font-size: 24px;
+    }
+
+    .stat-label {
+        font-size: 12px;
+    }
+
+    .book-showcase {
+        max-width: 300px;
+    }
+
+    .feature-item {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .video-title {
+        font-size: 20px;
+        margin-left: 15px;
+    }
+
+    .video-description {
+        font-size: 13px;
+        margin-left: 15px;
+    }
 }
